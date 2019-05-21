@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func (c *Client) AliTextScan() (*AliResponse, error) {
+func (c *Client) AliTextScan() (*AliTextScanResp, error) {
 	client := &http.Client{}
 	req, err := http.NewRequest(method, host+c.Path+"?clientInfo="+url.QueryEscape(c.ClientParams), strings.NewReader(c.Body))
 	if err != nil {
@@ -28,7 +28,7 @@ func (c *Client) AliTextScan() (*AliResponse, error) {
 		return nil, err
 	}
 
-	var resp AliResponse
+	var resp AliTextScanResponse
 	if err := json.Unmarshal(body, &resp); err != nil {
 		return nil, err
 	}

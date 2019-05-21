@@ -1,21 +1,21 @@
 package AliYunTextScan
 
-type AliResponse struct {
-	Code      int        `json:"code"`
-	Msg       string     `json:"msg"`
-	RequestID string     `json:"requestId"`
-	Data      []RespData `json:"data"`
+type AliTextScanResp struct {
+	Code      int                `json:"code"`
+	Msg       string             `json:"msg"`
+	RequestID string             `json:"requestId"`
+	Data      []TextScanRespData `json:"data"`
 }
 
-type RespData struct {
-	Code    int          `json:"code"`
-	Content string       `json:"content"`
-	DataID  string       `json:"dataId"`
-	Msg     string       `json:"msg"`
-	Results []RespDetail `json:"results"`
+type TextScanRespData struct {
+	Code    int                  `json:"code"`
+	Content string               `json:"content"`
+	DataID  string               `json:"dataId"`
+	Msg     string               `json:"msg"`
+	Results []TextScanRespDetail `json:"results"`
 }
 
-type RespDetail struct {
+type TextScanRespDetail struct {
 	Label      string  `json:"label"`
 	Rate       float64 `json:"rate"`
 	Scene      string  `json:"scene"`

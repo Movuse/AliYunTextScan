@@ -28,7 +28,7 @@ func (c *Client) AliTextScan() (*AliTextScanResp, error) {
 		return nil, err
 	}
 
-	var resp AliTextScanResponse
+	var resp AliTextScanResp
 	if err := json.Unmarshal(body, &resp); err != nil {
 		return nil, err
 	}

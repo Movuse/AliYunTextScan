@@ -70,7 +70,7 @@ func NewTextScan(accessKey, secret, path string, clientInfo *ClientInfo, content
 		return nil, err
 	}
 
-	client.ClientParams = string(bodyByte)
-	client.Body = string(infoByte)
+	client.ClientParams = string(infoByte)
+	client.Body = string(bodyByte)
 	return client, nil
 }
